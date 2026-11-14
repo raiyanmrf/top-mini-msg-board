@@ -1,0 +1,24 @@
+<%- include('header') %>
+    <h1>Messages</h1>
+    <a href="/new">New Message</a>
+
+    <ul>
+        <% messages.forEach(item=> { %>
+
+            <li>
+                <strong>
+                    <%= item.user %>:
+                </strong>
+                <span>
+                    <%= item.text %>
+                </span> <small><a href="/detail/<%= item.user %>">open</a></small>
+                <br>
+                <small>
+                    <%= item.added %>
+                </small>
+
+            </li>
+            <% }); %>
+    </ul>
+
+    <%- include('footer') %>
